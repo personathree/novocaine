@@ -34,10 +34,10 @@
             display: flex;
             justify-content: center;
             padding: 25px;
-            transform: scale(1.2); 
+            transform: scale(1.2);
             overflow-x: hidden;
             margin: auto;
-              background: url(" https://files.catbox.moe/crgny0.webp") no-repeat fixed center;
+            background: url(" https://files.catbox.moe/crgny0.webp") no-repeat fixed center;
             background-color: #21221d;
             background-blend-mode: overlay;
             -webkit-background-size: cover;
@@ -99,8 +99,8 @@
             border-image-slice: 13;
             border-image-width: 13px;
             border-image-outset: 5px;
-            -webkit-box-shadow: 2px 1px 13px 5px #000000; 
-box-shadow: 2px 1px 13px 5px #000000;
+            -webkit-box-shadow: 2px 1px 13px 5px #000000;
+            box-shadow: 2px 1px 13px 5px #000000;
         }
 
 
@@ -225,28 +225,28 @@ box-shadow: 2px 1px 13px 5px #000000;
         }
 
 
-        
+
         @media screen and (max-width: 650px) {
 
             body {
-                transform: scale(0.5);
+                transform: scale(0.7);
                 overflow-x: hidden;
-                width: 390px;
-                margin-left: -35%; 
+                width: 460px;
+                margin-left: -5%;
             }
 
             #hovertext {
                 display: none;
             }
 
-            .panel {
-                width: 370px; 
-                opacity: 100%;
+            .layout:hover .panel {
+                width: 370px;
+                height: 340px;
+                opacity: 1;
+                transform: none;
+
             }
 
-            .layout {
-                pointer-events: none;
-            }
         }
     </style>
 </head>
