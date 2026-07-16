@@ -223,6 +223,31 @@ box-shadow: 2px 1px 13px 5px #000000;
                 transform: translate(0, -0px);
             }
         }
+
+
+        
+        @media screen and (max-width: 650px) {
+
+            body {
+                transform: scale(0.5);
+                overflow-x: hidden;
+                width: 390px;
+                margin-left: -35%; 
+            }
+
+            #hovertext {
+                display: none;
+            }
+
+            .panel {
+                width: 370px; 
+                opacity: 100%;
+            }
+
+            .layout {
+                pointer-events: none;
+            }
+        }
     </style>
 </head>
 
