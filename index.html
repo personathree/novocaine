@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>caine-iac...</title>
+    <link rel="icon" href="https://i.postimg.cc/WbM2M8n2/red101.gif">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css">
+    <script src="https://kit.fontawesome.com/1b3980aa8f.js" crossorigin="anonymous"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cossette+Titre:wght@400;700&display=swap');
+
+        * {
+            font-family: "Cossette Titre";
+            color: black !important;
+        }
+
+        html {
+            filter: grayscale(0%);
+        }
+
+        ::selection {
+            background: rgb(137, 3, 3);
+            color: rgb(210, 183, 136);
+        }
+
+        body {
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            padding: 25px;
+            transform: scale(1.2); 
+            overflow-x: hidden;
+            margin: auto;
+              background: url(" https://files.catbox.moe/crgny0.webp") no-repeat fixed center;
+            background-color: #21221d;
+            background-blend-mode: overlay;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+
+        }
+
+        .card {
+            position: relative;
+            margin-top: 10%;
+            width: 520px;
+            height: 390px;
+            overflow: hidden;
+            padding: 0;
+        }
+
+        .layout {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .character {
+            position: absolute;
+            left: 10px;
+            bottom: 0;
+            width: 130px;
+            z-index: 5;
+            transition: .45s;
+        }
+
+        .character img {
+            display: block;
+            width: 130px;
+        }
+
+        .panel {
+            position: absolute;
+            left: 50px;
+            right: 15px;
+            top: 25px;
+            bottom: 25px;
+            background: hwb(40 42% 2%);
+            padding-top: 13px;
+            padding-left: 15px;
+            border-radius: 2% 100% / 100% 2%;
+            overflow: hidden;
+            width: 0px;
+            opacity: 0%;
+            transform: translateX(-20px);
+            transform-origin: left;
+            transition:
+                width .45s cubic-bezier(.22, 1, .36, 1),
+                opacity .3s,
+                transform .45s;
+            border-image: url('bord2.gif');
+            border-image-slice: 13;
+            border-image-width: 13px;
+            border-image-outset: 5px;
+            -webkit-box-shadow: 2px 1px 13px 5px #000000; 
+box-shadow: 2px 1px 13px 5px #000000;
+        }
+
+
+        .scroll {
+            width: 100%;
+            color: rgb(89, 63, 23) !important;
+            height: 100%;
+            overflow-y: hidden;
+            padding: 15px;
+            padding-right: 20px;
+            box-sizing: border-box;
+            transform: rotate(-2deg);
+        }
+
+        .scroll b {
+            color: rgb(194, 4, 4) !important;
+        }
+
+        .scroll u {
+            color: rgb(111, 82, 52) !important;
+            text-decoration-color: red;
+            ;
+        }
+
+        a {
+            color: rgb(61, 60, 60) !important;
+            transition: 0.2s ease-in-out;
+        }
+
+        a:hover {
+            background: rgb(179, 8, 8);
+            color: rgb(225, 206, 26) !important;
+            padding-left: 3px;
+            font-weight: bold;
+            padding-right: 3px;
+        }
+
+        .layout:hover .panel {
+            width: calc(100% - 150px);
+            opacity: 1;
+            transform: none;
+
+        }
+
+        .layout:hover .character {
+            transform: translateX(-8px) rotate(-2deg);
+        }
+
+        #red {
+            color: red !important;
+            font-size: 20px;
+        }
+
+        /* animation: scribble */
+        @keyframes squiggly-anim {
+            0% {
+                -webkit-filter: url("#squiggly-0");
+                filter: url("#squiggly-0");
+            }
+
+            25% {
+                -webkit-filter: url("#squiggly-1");
+                filter: url("#squiggly-1");
+            }
+
+            50% {
+                -webkit-filter: url("#squiggly-2");
+                filter: url("#squiggly-2");
+            }
+
+            75% {
+                -webkit-filter: url("#squiggly-3");
+                filter: url("#squiggly-3");
+            }
+
+            100% {
+                -webkit-filter: url("#squiggly-4");
+                filter: url("#squiggly-4");
+            }
+        }
+
+        #scribble {
+            animation: squiggly-anim 0.5s linear infinite;
+        }
+
+        button {
+            padding: 5px;
+            background: rgba(0, 0, 0, 0) !important;
+            border: none;
+        }
+
+        button i {
+            color: rgba(193, 25, 25, 0.89) !important;
+            transition: ease-in-out 0.3s;
+        }
+
+        button i:hover {
+            color: rgba(193, 25, 25, 0.534) !important;
+        }
+
+        /* animation: float */
+
+        #float {
+            animation-name: floating;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+        }
+
+        @keyframes floating {
+            0% {
+                transform: translate(0, 0px);
+            }
+
+            50% {
+                transform: translate(0, 10px);
+            }
+
+            100% {
+                transform: translate(0, -0px);
+            }
+        }
+    </style>
+</head>
+
+<div class="card">
+
+    <div class="layout">
+
+        <audio id="myAudio">
+            <source src="youorme.mp3" type="audio/mpeg">
+        </audio>
+
+        <div class="character">
+            <img src="nate.png" span id="float">
+        </div>
+
+        <div id="hovertext"
+            style="position: absolute; transform:rotate(30deg); color: rgb(108, 109, 111) !important; top: 360px; z-index: 99; text-shadow: 2px 2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, -2px -2px 0 #000, 2px 0px 0 #000, 0px 2px 0 #000, -2px 0px 0 #000, 0px -2px 0 #000, 1px 1px 5px rgba(0,0,0,0);">
+            hover me!
+        </div>
+
+        <div class="panel">
+
+
+            <div class="scroll">
+                <img src="nate4.png" style="float:right; padding: 20px;" width="110">
+
+
+                <font style="font-size: 20px"><b>SERIF</b></font> or <font style="font-size: 17px"><u>frasier</u></font>
+                <span id="red">...</span>
+                <font size="2px" style="color: rgb(155, 87, 60) !important;">+ cadaver or comer!
+                </font>⠀<b>he/him.</b> masc terms. <u>introject</u>
+                <font color="black" size="2px">of</font> <a href="https://hero.fandom.com/wiki/Nathan_Caine">him</a> and
+                <a href="https://simple.wikipedia.org/wiki/Heads_of_State_(movie)">him</a> <img
+                    src="https://i.postimg.cc/8CmN7DfW/1u9n1j.gif" width="15px">
+                <br> i know! it's a mouthful! too many names and <u>two</u> many sources.
+                <br> just call me one of the first <b>four</b>!
+                <br>
+
+                <img src="line.gif" style="position: absolute; margin-top: 9px;" width=190>
+                <img src="line.gif"
+                    style="position: absolute; margin-top: 128px; transform: rotate(4deg); filter:hue-rotate(390deg)"
+                    width=190>
+
+
+
+                <p
+                    style="text-align: right; transform:rotate(4deg); margin-top: 30px; padding-right: 15px; color: rgb(95, 73, 73) !important; ">
+                    this page is still under construction while i gain a sense of self and figure out the musings to put
+                    here ... just wanted something to call
+                    my own, <b>y'know?</b>
+                    unlike nathan caine, i <u>can</u> feel pain, so please don't
+                    stab me okay? it'll hurt. a lot. <b>:(</b>
+                </p>
+
+                <p style="margin-left: 220px;">
+                    <button onclick="document.getElementById('myAudio').play();play();"><i
+                            class="fa-solid fa-play fa-xl" style="color:rgb(225, 10, 10);"></i></button>
+                    <button onclick="document.getElementById('myAudio').pause();pause();"><i
+                            class="fa-solid fa-pause fa-xl" style="color:rgb(210, 18, 18);"></i></button>
+                </p>
+
+                <p
+                    style="transform:rotate(4deg); margin-top: -30px; padding-right: 13px; margin-left: 90px !important; color: rgb(160, 39, 39) !important;">
+                    you or me - the frights
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</html>
